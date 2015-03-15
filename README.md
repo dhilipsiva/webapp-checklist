@@ -25,7 +25,7 @@ Also, I'm looking for something more specific than just a vague "web standards" 
 
 ## Answer
 
-Interface and User Experience
+### Interface and User Experience
 
 Be aware that browsers implement standards inconsistently and make sure your site works reasonably well across all major browsers. At a minimum test against a recent Gecko engine (Firefox), a WebKit engine (Safari and some mobile browsers), Chrome, your supported IE browsers (take advantage of the Application Compatibility VPC Images), and Opera. Also consider how browsers render your site in different operating systems.
 Consider how people might use the site other than from the major browsers: cell phones, screen readers and search engines, for example. — Some accessibility info: WAI and Section508, Mobile development: MobiForge.
@@ -38,7 +38,9 @@ Learn how to do progressive enhancement.
 Redirect after a POST if that POST was successful, to prevent a refresh from submitting again.
 Don't forget to take accessibility into account. It's always a good idea and in certain circumstances it's a legal requirement. WAI-ARIA and WCAG 2 are good resources in this area.
 Don't make me think
-Security
+
+
+### Security
 
 It's a lot to digest but the OWASP development guide covers Web Site security from top to bottom.
 Know about Injection especially SQL injection and how to prevent it.
@@ -57,7 +59,9 @@ Keep yourself informed about the latest attack techniques and vulnerabilities af
 Read The Google Browser Security Handbook.
 Read The Web Application Hacker's Handbook.
 Consider The principle of least privilege. Try to run your app server as non-root. (tomcat example)
-Performance
+
+
+### Performance
 
 Implement caching if necessary, understand and use HTTP caching properly as well as HTML5 Manifest.
 Optimize images - don't use a 20 KB image for a repeating background.
@@ -70,7 +74,9 @@ Static content (i.e. images, CSS, JavaScript, and generally content that doesn't
 Minimize the total number of HTTP requests required for a browser to render the page.
 Utilize Google Closure Compiler for JavaScript and other minification tools.
 Make sure there’s a favicon.ico file in the root of the site, i.e. /favicon.ico. Browsers will automatically request it, even if the icon isn’t mentioned in the HTML at all. If you don’t have a /favicon.ico, this will result in a lot of 404s, draining your server’s bandwidth.
-SEO (Search Engine Optimization)
+
+
+### SEO (Search Engine Optimization)
 
 Use "search engine friendly" URLs, i.e. use example.com/pages/45-article-title instead of example.com/index.php?page=45
 When using # for dynamic content change the # to #! and then on the server $_REQUEST["_escaped_fragment_"] is what googlebot uses instead of #!. In other words, ./#!page=1 becomes ./?_escaped_fragments_=page=1. Also, for users that may be using FF.b4 or Chromium, history.pushState({"foo":"bar"}, "About", "./?page=1"); Is a great command. So even though the address bar has changed the page does not reload. This allows you to use ? instead of #! to keep dynamic content and also tell the server when you email the link that we are after this page, and the AJAX does not need to make another extra request.
@@ -83,7 +89,9 @@ Know how robots.txt and search engine spiders work.
 Redirect requests (using 301 Moved Permanently) asking for www.example.com to example.com (or the other way round) to prevent splitting the google ranking between both sites.
 Know that there can be badly-behaved spiders out there.
 If you have non-text content look into Google's sitemap extensions for video etc. There is some good information about this in Tim Farley's answer.
-Technology
+
+
+### Technology
 
 Understand HTTP and things like GET, POST, sessions, cookies, and what it means to be "stateless".
 Write your XHTML/HTML and CSS according to the W3C specifications and make sure they validate. The goal here is to avoid browser quirks modes and as a bonus make it much easier to work with non-traditional browsers like screen readers and mobile devices.
@@ -98,7 +106,9 @@ Consider JavaScript frameworks (such as jQuery, MooTools, Prototype, Dojo or YUI
 Taking perceived performance and JS frameworks together, consider using a service such as the Google Libraries API to load frameworks so that a browser can use a copy of the framework it has already cached rather than downloading a duplicate copy from your site.
 Don't reinvent the wheel. Before doing ANYTHING search for a component or example on how to do it. There is a 99% chance that someone has done it and released an OSS version of the code.
 On the flipside of that, don't start with 20 libraries before you've even decided what your needs are. Particularly on the client-side web where it's almost always ultimately more important to keep things lightweight, fast, and flexible.
-Bug fixing
+
+
+### Bug fixing
 
 Understand you'll spend 20% of your time coding and 80% of it maintaining, so code accordingly.
 Set up a good error reporting solution.
