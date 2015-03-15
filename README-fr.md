@@ -2,34 +2,11 @@
 
 Détails techniques qu'un programmeur d'une application web doivent considérer avant de faire le site public.
 
-## Disclaimer
-
-Ce était à l'origine une question posée sur [Programmers-StackExchange](http://programmers.stackexchange.com/questions/46716/what-technical-details-should-a-programmer-of-a-web-application-consider-before) par [Joel Coehoorn] (http://programmers.stackexchange.com/users/8057/joel-coehoorn) et a depuis été [répondu] (http://programmers.stackexchange.com/a/46760/54643) et [ maintenu] (http://programmers.stackexchange.com/posts/46760/revisions) que la communauté wiki.
-
-Il ya trois raisons pour lesquelles je fais une mise en pension GitHub:
-
-1. Édition collaborative est beaucoup plus puissant sur GitHub.
-2. Les gens peuvent débourser cette pension et effectuer des personnalisations qui pourraient ne pas se appliquer à tout le monde.
-3. Nous pouvons avoir des traductions de la réponse dans de nombreuses langues. Pas tout le monde est bon avec l'anglais.
-
-
-## Question
-
-Quelles sont les choses un programmeur mise en œuvre des détails techniques d'une application web devrait considérer avant de faire le site public? Si Jeff Atwood peut oublier HttpOnly biscuits, sitemaps, et cross-site demande faux tous dans le même site, ce qui est important pourrais-je être oubliais ainsi?
-
-Je pense à ce sujet du point de vue d'un développeur web, de sorte que quelqu'un d'autre est de créer le design actuel et le contenu du site. Ainsi, alors que la convivialité et le contenu peut être plus important que la plate-forme, vous avez le programmeur peu à dire sur cela. Ce que vous ne avez pas besoin de se inquiéter, ce est que votre mise en œuvre de la plate-forme est stable, fonctionne bien, est sécurisé et répond à toutes les autres objectifs de l'entreprise (comme ne coûtent pas trop, prennent trop de temps à construire, et se classent ainsi avec Google comme supports contenu).
-
-Pensez à cela du point de vue d'un développeur qui a fait un peu de travail pour les applications de type intranet dans un environnement assez grand, et est sur le point d'avoir son premier coup et de mettre sur un site potentiellement populaire pour toute la grande wide web mauvais monde.
-
-Aussi, je suis à la recherche de quelque chose de plus spécifique que juste un "standards du Web" réponse vague. Je veux dire, HTML, JavaScript et CSS sur HTTP sont à peu près une donnée, surtout quand je l'ai déjà précisé que vous êtes un développeur web professionnel. Donc, allant au-delà, les normes? Dans quelles circonstances et pourquoi? Fournir un lien vers la spécification de la norme.
-
-
-## Réponse
 
 L'idée ici est que la plupart d'entre nous devrait savoir _already_ _most_ de ce qui est sur cette liste. Mais il pourrait bien être un ou deux éléments que vous ne avez pas vraiment penchés sur avant, ne comprenons pas pleinement, ou peut-être même jamais entendu parler.
 
 
-### Interface et l'expérience utilisateur
+## Interface et l'expérience utilisateur
 
 * Soyez conscient que les navigateurs de mettre en œuvre les normes incohérente et assurez-vous que votre site fonctionne raisonnablement bien dans tous les principaux navigateurs. Lors d'une épreuve minimale contre une récente [Gecko] (http://en.wikipedia.org/wiki/Gecko_%28layout_engine%29) moteur ([Firefox] (http://firefox.com/)), un moteur de WebKit ( [Safari] (http://www.apple.com/safari/) et certains navigateurs mobiles), [Chrome] (http://www.google.com/chrome), vos soutenus [navigateurs IE] (http: / /en.wikipedia.org/wiki/Internet_Explorer) (profiter de la [Application Compatibility VPC Images](http://www.microsoft.com/Downloads/details.aspx?FamilyID=21eabb90-958f-4b64-b5f1-73d0a413c8ef&displaylang=en)), et [Opera] (http://www.opera.com/). Voir également la façon dont [navigateurs rendre votre site] (http://www.browsershots.org) dans les systèmes d'exploitation différents.
 * Voyez comment les gens peuvent utiliser le site autre que des principaux navigateurs: les téléphones cellulaires, les lecteurs d'écran et les moteurs de recherche, par exemple. & Mdash; Quelques infos d'accessibilité: [WAI] (http://www.w3.org/WAI/) et [Section508] (http://www.section508.gov/), Développement mobile: [MobiForge] (http: // mobiforge .com /).
@@ -44,7 +21,7 @@ L'idée ici est que la plupart d'entre nous devrait savoir _already_ _most_ de c
 * [Ne me font penser] (http://www.sensible.com/dmmt.html)
 
 
-### Question de sécurité
+## Question de sécurité
 
 * Il ya beaucoup à digérer mais le [guide de développement OWASP] (http://www.owasp.org/index.php/Category:OWASP_Guide_Project) couvre Sécurité du site Web de haut en bas.
 * Connaître injection en particulier [injection SQL] (http://en.wikipedia.org/wiki/SQL_injection) et comment le prévenir.
@@ -65,7 +42,7 @@ L'idée ici est que la plupart d'entre nous devrait savoir _already_ _most_ de c
 * Pensez [Le principe du moindre privilège] (https://en.wikipedia.org/wiki/Principle_of_least_privilege). Essayez de gérer votre serveur d'application [comme non-root](http://security.stackexchange.com/questions/47576/do-simple-linux-servers-really-need-a-non-root-user-for-security-reasons). ([Exemple tomcat] (http://tomcat.apache.org/tomcat-8.0-doc/security-howto.html#Non-Tomcat_settings))
 
 
-### Performance
+## Performance
 
 * Mettre en œuvre la mise en cache si nécessaire, comprendre et utiliser [la mise en cache HTTP] (http://www.mnot.net/cache_docs/) correctement ainsi que [HTML5 manifeste] (http://www.w3.org/TR/2011/ WD-html5-20110525 / offline.html).
 * Optimiser images - ne pas utiliser une image de 20 Ko pour un fond de répétition.
@@ -80,7 +57,7 @@ L'idée ici est que la plupart d'entre nous devrait savoir _already_ _most_ de c
 * Assurez-vous qu'il ya un fichier `favicon.ico` à la racine du site, ce est à dire` / favicon.ico`. [Navigateurs seront automatiquement demander] (http://mathiasbynens.be/notes/rel-shortcut-icon), même si l'icône ne est pas mentionné dans le code HTML du tout. Si vous ne avez pas de `/ favicon.ico`, cela se traduira par beaucoup de 404s, drainant la bande passante de votre serveur.
 
 
-### SEO (Search Engine Optimization)
+## SEO (Search Engine Optimization)
 
 * Utilisez "moteur de recherche convivial" URL, soit utiliser `example.com / pages / 45-article-title` au lieu de ` example.com/index.php? Page = 45`
 * Lorsque vous utilisez `#` pour le contenu dynamique changer le `#` à `#!`, Puis sur le serveur `$ _REQUEST [" _ _ escaped_fragment "]` est ce que Googlebot utilise au lieu de `#!`. En d'autres termes, `./#! Page = 1` devient` ./?_ escaped_fragments_ = page = 1`. En outre, pour les utilisateurs qui peuvent utiliser FF.b4 ou chrome, `history.pushState ({" foo ":" bar "}," A propos ","? Page = 1 ./ ");` est une grande commande. Ainsi, même si la barre d'adresse a changé la page ne se recharge pas. Cela vous permet d'utiliser `?` Au lieu de `#!` Pour maintenir le contenu dynamique et aussi de dire au serveur quand vous email le lien que nous sommes après cette page, et l'AJAX n'a ​​pas besoin de faire une autre demande supplémentaire.
@@ -95,7 +72,7 @@ L'idée ici est que la plupart d'entre nous devrait savoir _already_ _most_ de c
 * Si vous avez non-texte contenu coup d'oeil dans les extensions plan du site de Google pour la vidéo, etc. Il ya quelques bonnes informations à ce sujet [Tim Farley answer](http://stackoverflow.com/questions/72394/what-should-a-developer-know-before-building-a-public-web-site#167608).
 
 
-### Technologie
+## Technologie
 
 * Comprendre [HTTP] (http://www.ietf.org/rfc/rfc2616.txt) et des choses comme GET, POST, sessions, les cookies, et ce que cela signifie d'être «apatride».
 * Écrivez votre [XHTML] (http://www.w3.org/TR/xhtml1/) / [HTML] (http://www.w3.org/TR/REC-html40/) et [CSS] (http : //www.w3.org/TR/CSS2/) selon les spécifications du W3C [] (http://www.w3.org/TR/) et se assurer qu'ils [Valider] (http: //validator.w3 .org /). Le but ici est d'éviter navigateur bizarreries modes et en prime le rendre beaucoup plus facile de travailler avec les navigateurs non-traditionnels tels que les lecteurs d'écran et les périphériques mobiles.
@@ -112,7 +89,7 @@ L'idée ici est que la plupart d'entre nous devrait savoir _already_ _most_ de c
 * Sur le revers de cela, ne pas commencer par 20 bibliothèques avant même que vous avez décidé de ce que sont vos besoins. Particulièrement sur le web côté client où il est presque toujours finalement plus important de garder les choses léger, rapide et flexible.
 
 
-### Correction
+## Correction
 
 * Comprenez vous passerez 20% de votre codage de temps et 80% de celui-ci le maintien, donc le code en conséquence.
 * Mettre en place une bonne solution de reporting d'erreur.
@@ -123,3 +100,25 @@ L'idée ici est que la plupart d'entre nous devrait savoir _already_ _most_ de c
 * Ne oubliez pas de faire vos tests d'acceptation. Cadres comme [sélénium] (http://seleniumhq.org/) peuvent aider. Surtout si vous automatiser entièrement vos tests, peut-être en utilisant un outil d'intégration continue, comme [Jenkins] (http://jenkins-ci.org/).
 * Assurez-vous que vous avez suffisamment d'exploitation forestière en place en utilisant des cadres tels que [log4j] (http://logging.apache.org/log4j/), [log4net] (http://logging.apache.org/log4net/) ou [ log4r] (http://log4r.rubyforge.org/). Si quelque chose va mal sur votre site en direct, vous aurez besoin d'un moyen de savoir quoi.
 * Lorsque vous vous connectez vous assurer que vous capturez des exceptions à la fois traitées, et les exceptions non gérées. Rapport / analyser la sortie du journal, que ça va vous montrer où sont les questions clés dans votre site.
+
+
+# Disclaimer
+
+Ce était à l'origine une question posée sur [Programmers-StackExchange](http://programmers.stackexchange.com/questions/46716/what-technical-details-should-a-programmer-of-a-web-application-consider-before) par [Joel Coehoorn] (http://programmers.stackexchange.com/users/8057/joel-coehoorn) et a depuis été [répondu] (http://programmers.stackexchange.com/a/46760/54643) et [ maintenu] (http://programmers.stackexchange.com/posts/46760/revisions) que la communauté wiki.
+
+Il ya trois raisons pour lesquelles je fais une mise en pension GitHub:
+
+1. Édition collaborative est beaucoup plus puissant sur GitHub.
+2. Les gens peuvent débourser cette pension et effectuer des personnalisations qui pourraient ne pas se appliquer à tout le monde.
+3. Nous pouvons avoir des traductions de la réponse dans de nombreuses langues. Pas tout le monde est bon avec l'anglais.
+
+
+# Question
+
+Quelles sont les choses un programmeur mise en œuvre des détails techniques d'une application web devrait considérer avant de faire le site public? Si Jeff Atwood peut oublier HttpOnly biscuits, sitemaps, et cross-site demande faux tous dans le même site, ce qui est important pourrais-je être oubliais ainsi?
+
+Je pense à ce sujet du point de vue d'un développeur web, de sorte que quelqu'un d'autre est de créer le design actuel et le contenu du site. Ainsi, alors que la convivialité et le contenu peut être plus important que la plate-forme, vous avez le programmeur peu à dire sur cela. Ce que vous ne avez pas besoin de se inquiéter, ce est que votre mise en œuvre de la plate-forme est stable, fonctionne bien, est sécurisé et répond à toutes les autres objectifs de l'entreprise (comme ne coûtent pas trop, prennent trop de temps à construire, et se classent ainsi avec Google comme supports contenu).
+
+Pensez à cela du point de vue d'un développeur qui a fait un peu de travail pour les applications de type intranet dans un environnement assez grand, et est sur le point d'avoir son premier coup et de mettre sur un site potentiellement populaire pour toute la grande wide web mauvais monde.
+
+Aussi, je suis à la recherche de quelque chose de plus spécifique que juste un "standards du Web" réponse vague. Je veux dire, HTML, JavaScript et CSS sur HTTP sont à peu près une donnée, surtout quand je l'ai déjà précisé que vous êtes un développeur web professionnel. Donc, allant au-delà, les normes? Dans quelles circonstances et pourquoi? Fournir un lien vers la spécification de la norme.

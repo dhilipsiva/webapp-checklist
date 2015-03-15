@@ -2,34 +2,10 @@
 
 Technical details that a programmer of a web application should consider before making the site public.
 
-## Disclaimer
-
-This was originally a question asked on [Programmers-StackExchange](http://programmers.stackexchange.com/questions/46716/what-technical-details-should-a-programmer-of-a-web-application-consider-before)  by [Joel Coehoorn](http://programmers.stackexchange.com/users/8057/joel-coehoorn) and has since been [answered](http://programmers.stackexchange.com/a/46760/54643) and [maintained](http://programmers.stackexchange.com/posts/46760/revisions) as community wiki.
-
-There are three reasons why I am making a GitHub repo:
-
-1. Collaborative editing is much more powerful on GitHub.
-2. People can fork this repo and make customizations that might not apply to everyone else.
-3. We can have translations of the answer in many languages. Not everyone is good with English.
-
-
-## Question
-
-What things should a programmer implementing the technical details of a web application consider before making the site public? If Jeff Atwood can forget about HttpOnly cookies, sitemaps, and cross-site request forgeries all in the same site, what important thing could I be forgetting as well?
-
-I'm thinking about this from a web developer's perspective, such that someone else is creating the actual design and content for the site. So while usability and content may be more important than the platform, you the programmer have little say in that. What you do need to worry about is that your implementation of the platform is stable, performs well, is secure, and meets any other business goals (like not cost too much, take too long to build, and rank as well with Google as the content supports).
-
-Think of this from the perspective of a developer who's done some work for intranet-type applications in a fairly trusted environment, and is about to have his first shot and putting out a potentially popular site for the entire big bad world wide web.
-
-Also, I'm looking for something more specific than just a vague "web standards" response. I mean, HTML, JavaScript, and CSS over HTTP are pretty much a given, especially when I've already specified that you're a professional web developer. So going beyond that, Which standards? In what circumstances, and why? Provide a link to the standard's specification.
-
-
-## Answer
-
 The idea here is that most of us should _already_ know _most_ of what is on this list.  But there just might be one or two items you haven't really looked into before, don't fully understand, or maybe never even heard of.
 
 
-### Interface and User Experience
+## Interface and User Experience
 
 * Be  aware that browsers implement standards inconsistently and make sure your site works reasonably well across all major browsers.  At a minimum test against a recent [Gecko](http://en.wikipedia.org/wiki/Gecko_%28layout_engine%29) engine ([Firefox](http://firefox.com/)), a WebKit engine ([Safari](http://www.apple.com/safari/) and some mobile browsers), [Chrome](http://www.google.com/chrome), your supported [IE browsers](http://en.wikipedia.org/wiki/Internet_Explorer) (take advantage of the [Application Compatibility VPC Images](http://www.microsoft.com/Downloads/details.aspx?FamilyID=21eabb90-958f-4b64-b5f1-73d0a413c8ef&displaylang=en)), and [Opera](http://www.opera.com/). Also consider how [browsers render your site](http://www.browsershots.org) in different operating systems.
 * Consider how people might use the site other than from the major browsers: cell phones, screen readers and search engines, for example. &mdash; Some accessibility info: [WAI](http://www.w3.org/WAI/) and [Section508](http://www.section508.gov/), Mobile development: [MobiForge](http://mobiforge.com/).
@@ -44,7 +20,7 @@ The idea here is that most of us should _already_ know _most_ of what is on this
 * [Don't make me think](http://www.sensible.com/dmmt.html)
 
 
-### Security
+## Security
 
 * It's a lot to digest but the [OWASP development guide](http://www.owasp.org/index.php/Category:OWASP_Guide_Project) covers Web Site security from top to bottom.
 * Know about Injection especially [SQL injection](http://en.wikipedia.org/wiki/SQL_injection) and how to prevent it.
@@ -65,7 +41,7 @@ The idea here is that most of us should _already_ know _most_ of what is on this
 * Consider [The principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege). Try to run your app server [as non-root](http://security.stackexchange.com/questions/47576/do-simple-linux-servers-really-need-a-non-root-user-for-security-reasons). ([tomcat example](http://tomcat.apache.org/tomcat-8.0-doc/security-howto.html#Non-Tomcat_settings))
 
 
-### Performance
+## Performance
 
 * Implement caching if necessary, understand and use [HTTP caching](http://www.mnot.net/cache_docs/) properly as well as [HTML5 Manifest](http://www.w3.org/TR/2011/WD-html5-20110525/offline.html).
 * Optimize images - don't use a 20 KB image for a repeating background.
@@ -80,7 +56,7 @@ The idea here is that most of us should _already_ know _most_ of what is on this
 * Make sure there’s a `favicon.ico` file in the root of the site, i.e. `/favicon.ico`. [Browsers will automatically request it](http://mathiasbynens.be/notes/rel-shortcut-icon), even if the icon isn’t mentioned in the HTML at all. If you don’t have a `/favicon.ico`, this will result in a lot of 404s, draining your server’s bandwidth.
 
 
-### SEO (Search Engine Optimization)
+## SEO (Search Engine Optimization)
 
 * Use "search engine friendly" URLs, i.e. use `example.com/pages/45-article-title` instead of `example.com/index.php?page=45`
 * When using `#` for dynamic content change the `#` to `#!` and then on the server `$_REQUEST["_escaped_fragment_"]` is what googlebot uses instead of `#!`. In other words, `./#!page=1` becomes `./?_escaped_fragments_=page=1`. Also, for users that may be using FF.b4 or Chromium, `history.pushState({"foo":"bar"}, "About", "./?page=1");` Is a great command. So even though the address bar has changed the page does not reload. This allows you to use `?` instead of `#!` to keep dynamic content and also tell the server when you email the link that we are after this page, and the AJAX does not need to make another extra request.
@@ -95,7 +71,7 @@ The idea here is that most of us should _already_ know _most_ of what is on this
 * If you have non-text content look into Google's sitemap extensions for video etc. There is some good information about this in [Tim Farley's answer](http://stackoverflow.com/questions/72394/what-should-a-developer-know-before-building-a-public-web-site#167608).
 
 
-### Technology
+## Technology
 
  * Understand [HTTP](http://www.ietf.org/rfc/rfc2616.txt) and things like GET, POST, sessions, cookies, and what it means to be "stateless".
  * Write your [XHTML](http://www.w3.org/TR/xhtml1/)/[HTML](http://www.w3.org/TR/REC-html40/) and [CSS](http://www.w3.org/TR/CSS2/) according to the [W3C specifications](http://www.w3.org/TR/) and make sure they [validate](http://validator.w3.org/).  The goal here is to avoid browser quirks modes and as a bonus make it much easier to work with non-traditional browsers like screen readers and mobile devices.
@@ -112,7 +88,7 @@ The idea here is that most of us should _already_ know _most_ of what is on this
  * On the flipside of that, don't start with 20 libraries before you've even decided what your needs are. Particularly on the client-side web where it's almost always ultimately more important to keep things lightweight, fast, and flexible.
 
 
-### Bug fixing
+## Bug fixing
 
 * Understand you'll spend 20% of your time coding and 80% of it maintaining, so code accordingly.
 * Set up a good error reporting solution.
@@ -123,3 +99,25 @@ The idea here is that most of us should _already_ know _most_ of what is on this
 * Don't forget to do your Acceptance Testing.  Frameworks like [Selenium](http://seleniumhq.org/) can help. Especially if you fully automate your testing, perhaps by using a Continuous Integration tool, such as [Jenkins](http://jenkins-ci.org/).
 * Make sure you have sufficient logging in place using frameworks such as [log4j](http://logging.apache.org/log4j/), [log4net](http://logging.apache.org/log4net/) or [log4r](http://log4r.rubyforge.org/). If something goes wrong on your live site, you'll need a way of finding out what.
 * When logging make sure you capture both handled exceptions, and unhandled exceptions. Report/analyse the log output, as it'll show you where the key issues are in your site.
+
+
+# Disclaimer
+
+This was originally a question asked on [Programmers-StackExchange](http://programmers.stackexchange.com/questions/46716/what-technical-details-should-a-programmer-of-a-web-application-consider-before)  by [Joel Coehoorn](http://programmers.stackexchange.com/users/8057/joel-coehoorn) and has since been [answered](http://programmers.stackexchange.com/a/46760/54643) and [maintained](http://programmers.stackexchange.com/posts/46760/revisions) as community wiki.
+
+There are three reasons why I am making a GitHub repo:
+
+1. Collaborative editing is much more powerful on GitHub.
+2. People can fork this repo and make customizations that might not apply to everyone else.
+3. We can have translations of the answer in many languages. Not everyone is good with English.
+
+
+# Question
+
+What things should a programmer implementing the technical details of a web application consider before making the site public? If Jeff Atwood can forget about HttpOnly cookies, sitemaps, and cross-site request forgeries all in the same site, what important thing could I be forgetting as well?
+
+I'm thinking about this from a web developer's perspective, such that someone else is creating the actual design and content for the site. So while usability and content may be more important than the platform, you the programmer have little say in that. What you do need to worry about is that your implementation of the platform is stable, performs well, is secure, and meets any other business goals (like not cost too much, take too long to build, and rank as well with Google as the content supports).
+
+Think of this from the perspective of a developer who's done some work for intranet-type applications in a fairly trusted environment, and is about to have his first shot and putting out a potentially popular site for the entire big bad world wide web.
+
+Also, I'm looking for something more specific than just a vague "web standards" response. I mean, HTML, JavaScript, and CSS over HTTP are pretty much a given, especially when I've already specified that you're a professional web developer. So going beyond that, Which standards? In what circumstances, and why? Provide a link to the standard's specification.
