@@ -96,7 +96,7 @@ The idea here is that most of us should _already_ know _most_ of what is on this
 * Document how the application works for future support staff and people performing maintenance.
 * Make frequent backups! (And make sure those backups are functional) Have a restore strategy, not just a backup strategy.
 * Use a version control system to store your files, such as [Subversion](http://subversion.apache.org/), [Mercurial](http://mercurial.selenic.com/) or [Git](http://git-scm.org).
-* Don't forget to do your Acceptance Testing.  Frameworks like [Selenium](http://seleniumhq.org/) can help. Especially if you fully automate your testing, perhaps by using a Continuous Integration tool, such as [Jenkins](http://jenkins-ci.org/).
+* Don't forget to do your Acceptance Testing.  Frameworks like [Selenium](http://seleniumhq.org/) can help. Especially if you fully automate your testing, perhaps by using a Continuous Integration tool, such as [Jenkins](http://jenkins-ci.org/) or [Drone](https://drone.io/).
 * Make sure you have sufficient logging in place using frameworks such as [log4j](http://logging.apache.org/log4j/), [log4net](http://logging.apache.org/log4net/) or [log4r](http://log4r.rubyforge.org/). If something goes wrong on your live site, you'll need a way of finding out what.
 * When logging make sure you capture both handled exceptions, and unhandled exceptions. Report/analyse the log output, as it'll show you where the key issues are in your site.
 
