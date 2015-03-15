@@ -104,7 +104,7 @@ The idea here is that most of us should _already_ know _most_ of what is on this
 ## Other
 
 * Implement both server-side and client-side monitoring and analytics (one should be proactive rather than reactive).
-* Use services like UserVoice and Intercom (or any other similar tools) to constantly keep in touch with your users.
+* Use services like [UserVoice](https://www.uservoice.com/) and [Intercom](https://www.intercom.io/) (or any other similar tools) to constantly keep in touch with your users.
 * Follow [Vincent Driessen](http://nvie.com/about/)'s [Git branching model](http://nvie.com/posts/a-successful-git-branching-model/)
 
 
