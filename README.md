@@ -23,9 +23,11 @@ Think of this from the perspective of a developer who's done some work for intra
 
 Also, I'm looking for something more specific than just a vague "web standards" response. I mean, HTML, JavaScript, and CSS over HTTP are pretty much a given, especially when I've already specified that you're a professional web developer. So going beyond that, Which standards? In what circumstances, and why? Provide a link to the standard's specification.
 
+
 ## Answer
 
 The idea here is that most of us should _already_ know _most_ of what is on this list.  But there just might be one or two items you haven't really looked into before, don't fully understand, or maybe never even heard of.
+
 
 ### Interface and User Experience
 
@@ -40,6 +42,7 @@ The idea here is that most of us should _already_ know _most_ of what is on this
  - [Redirect after a POST](http://en.wikipedia.org/wiki/Post/Redirect/Get) if that POST was successful, to prevent a refresh from submitting again.
  - Don't forget to take accessibility into account.  It's always a good idea and in certain circumstances it's a [legal requirement](http://www.section508.gov/).  [WAI-ARIA](http://www.w3.org/WAI/intro/aria) and [WCAG 2](http://www.w3.org/TR/WCAG20/) are good resources in this area.
  - [Don't make me think](http://www.sensible.com/dmmt.html)
+
 
 ### Security
 
@@ -61,6 +64,7 @@ The idea here is that most of us should _already_ know _most_ of what is on this
 * Read [The Web Application Hacker's Handbook](http://amzn.com/0470170778).
 * Consider [The principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege). Try to run your app server [as non-root](http://security.stackexchange.com/questions/47576/do-simple-linux-servers-really-need-a-non-root-user-for-security-reasons). ([tomcat example](http://tomcat.apache.org/tomcat-8.0-doc/security-howto.html#Non-Tomcat_settings))
 
+
 ### Performance
 
 * Implement caching if necessary, understand and use [HTTP caching](http://www.mnot.net/cache_docs/) properly as well as [HTML5 Manifest](http://www.w3.org/TR/2011/WD-html5-20110525/offline.html).
@@ -75,6 +79,7 @@ The idea here is that most of us should _already_ know _most_ of what is on this
 * Utilize [Google Closure Compiler](http://developers.google.com/closure/compiler/) for JavaScript and [other minification tools](http://developer.yahoo.com/yui/compressor/).
 * Make sure there’s a `favicon.ico` file in the root of the site, i.e. `/favicon.ico`. [Browsers will automatically request it](http://mathiasbynens.be/notes/rel-shortcut-icon), even if the icon isn’t mentioned in the HTML at all. If you don’t have a `/favicon.ico`, this will result in a lot of 404s, draining your server’s bandwidth.
 
+
 ### SEO (Search Engine Optimization)
 
 * Use "search engine friendly" URLs, i.e. use `example.com/pages/45-article-title` instead of `example.com/index.php?page=45`
@@ -88,6 +93,7 @@ The idea here is that most of us should _already_ know _most_ of what is on this
 * Redirect requests (using `301 Moved Permanently`) asking for `www.example.com` to `example.com` (or the other way round) to prevent splitting  the google ranking between both sites.
 * Know that there can be badly-behaved spiders out there.
 * If you have non-text content look into Google's sitemap extensions for video etc. There is some good information about this in [Tim Farley's answer](http://stackoverflow.com/questions/72394/what-should-a-developer-know-before-building-a-public-web-site#167608).
+
 
 ### Technology
 
@@ -117,5 +123,3 @@ The idea here is that most of us should _already_ know _most_ of what is on this
 * Don't forget to do your Acceptance Testing.  Frameworks like [Selenium](http://seleniumhq.org/) can help. Especially if you fully automate your testing, perhaps by using a Continuous Integration tool, such as [Jenkins](http://jenkins-ci.org/).
 * Make sure you have sufficient logging in place using frameworks such as [log4j](http://logging.apache.org/log4j/), [log4net](http://logging.apache.org/log4net/) or [log4r](http://log4r.rubyforge.org/). If something goes wrong on your live site, you'll need a way of finding out what.
 * When logging make sure you capture both handled exceptions, and unhandled exceptions. Report/analyse the log output, as it'll show you where the key issues are in your site.
-
-Lots of stuff omitted not necessarily because they're not useful answers, but because they're either too detailed, out of scope, or go a bit too far for someone looking to get an overview of the things they should know. Please feel free to edit this as well, I probably missed some stuff or made some mistakes.
