@@ -31,17 +31,17 @@ The idea here is that most of us should _already_ know _most_ of what is on this
 
 ### Interface and User Experience
 
- - Be  aware that browsers implement standards inconsistently and make sure your site works reasonably well across all major browsers.  At a minimum test against a recent [Gecko](http://en.wikipedia.org/wiki/Gecko_%28layout_engine%29) engine ([Firefox](http://firefox.com/)), a WebKit engine ([Safari](http://www.apple.com/safari/) and some mobile browsers), [Chrome](http://www.google.com/chrome), your supported [IE browsers](http://en.wikipedia.org/wiki/Internet_Explorer) (take advantage of the [Application Compatibility VPC Images](http://www.microsoft.com/Downloads/details.aspx?FamilyID=21eabb90-958f-4b64-b5f1-73d0a413c8ef&displaylang=en)), and [Opera](http://www.opera.com/). Also consider how [browsers render your site](http://www.browsershots.org) in different operating systems.
- - Consider how people might use the site other than from the major browsers: cell phones, screen readers and search engines, for example. &mdash; Some accessibility info: [WAI](http://www.w3.org/WAI/) and [Section508](http://www.section508.gov/), Mobile development: [MobiForge](http://mobiforge.com/).
- - Staging: How to deploy updates without affecting your users.  Have one or more test or staging environments available to implement changes to architecture, code or sweeping content and ensure that they can be deployed in a controlled way without breaking anything. Have an automated way of then deploying approved changes to the live site. This is most effectively implemented in conjunction with the use of a version control system (CVS, Subversion, etc.) and an automated build mechanism (Ant, NAnt, etc.).
- - Don't display unfriendly errors directly to the user.
- - Don't put users' email addresses in plain text as they will get spammed to death.
- - Add the attribute `rel="nofollow"` to user-generated links [to avoid spam](http://en.wikipedia.org/wiki/Nofollow).
- - [Build well-considered limits into your site](http://www.codinghorror.com/blog/archives/001228.html) - This also belongs under Security.
- - Learn how to do [progressive enhancement](http://en.wikipedia.org/wiki/Progressive_enhancement).
- - [Redirect after a POST](http://en.wikipedia.org/wiki/Post/Redirect/Get) if that POST was successful, to prevent a refresh from submitting again.
- - Don't forget to take accessibility into account.  It's always a good idea and in certain circumstances it's a [legal requirement](http://www.section508.gov/).  [WAI-ARIA](http://www.w3.org/WAI/intro/aria) and [WCAG 2](http://www.w3.org/TR/WCAG20/) are good resources in this area.
- - [Don't make me think](http://www.sensible.com/dmmt.html)
+* Be  aware that browsers implement standards inconsistently and make sure your site works reasonably well across all major browsers.  At a minimum test against a recent [Gecko](http://en.wikipedia.org/wiki/Gecko_%28layout_engine%29) engine ([Firefox](http://firefox.com/)), a WebKit engine ([Safari](http://www.apple.com/safari/) and some mobile browsers), [Chrome](http://www.google.com/chrome), your supported [IE browsers](http://en.wikipedia.org/wiki/Internet_Explorer) (take advantage of the [Application Compatibility VPC Images](http://www.microsoft.com/Downloads/details.aspx?FamilyID=21eabb90-958f-4b64-b5f1-73d0a413c8ef&displaylang=en)), and [Opera](http://www.opera.com/). Also consider how [browsers render your site](http://www.browsershots.org) in different operating systems.
+* Consider how people might use the site other than from the major browsers: cell phones, screen readers and search engines, for example. &mdash; Some accessibility info: [WAI](http://www.w3.org/WAI/) and [Section508](http://www.section508.gov/), Mobile development: [MobiForge](http://mobiforge.com/).
+* Staging: How to deploy updates without affecting your users.  Have one or more test or staging environments available to implement changes to architecture, code or sweeping content and ensure that they can be deployed in a controlled way without breaking anything. Have an automated way of then deploying approved changes to the live site. This is most effectively implemented in conjunction with the use of a version control system (CVS, Subversion, etc.) and an automated build mechanism (Ant, NAnt, etc.).
+* Don't display unfriendly errors directly to the user.
+* Don't put users' email addresses in plain text as they will get spammed to death.
+* Add the attribute `rel="nofollow"` to user-generated links [to avoid spam](http://en.wikipedia.org/wiki/Nofollow).
+* [Build well-considered limits into your site](http://www.codinghorror.com/blog/archives/001228.html) - This also belongs under Security.
+* Learn how to do [progressive enhancement](http://en.wikipedia.org/wiki/Progressive_enhancement).
+* [Redirect after a POST](http://en.wikipedia.org/wiki/Post/Redirect/Get) if that POST was successful, to prevent a refresh from submitting again.
+* Don't forget to take accessibility into account.  It's always a good idea and in certain circumstances it's a [legal requirement](http://www.section508.gov/).  [WAI-ARIA](http://www.w3.org/WAI/intro/aria) and [WCAG 2](http://www.w3.org/TR/WCAG20/) are good resources in this area.
+* [Don't make me think](http://www.sensible.com/dmmt.html)
 
 
 ### Security
