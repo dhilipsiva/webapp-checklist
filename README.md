@@ -4,7 +4,7 @@ Technical details that a programmer of a web application should consider before 
 
 ## Disclaimer
 
-This was originally a question asked by [Joel Coehoorn](http://programmers.stackexchange.com/users/8057/joel-coehoorn) on [Programmers-StackExchange](http://programmers.stackexchange.com/questions/46716/what-technical-details-should-a-programmer-of-a-web-application-consider-before) and has since been [answered](http://programmers.stackexchange.com/a/46760/54643) and [maintained](http://programmers.stackexchange.com/posts/46760/revisions) as community wiki.
+This was originally a question asked on [Programmers-StackExchange](http://programmers.stackexchange.com/questions/46716/what-technical-details-should-a-programmer-of-a-web-application-consider-before)  by [Joel Coehoorn](http://programmers.stackexchange.com/users/8057/joel-coehoorn) and has since been [answered](http://programmers.stackexchange.com/a/46760/54643) and [maintained](http://programmers.stackexchange.com/posts/46760/revisions) as community wiki.
 
 There are three reasons why I am making a GitHub repo:
 
