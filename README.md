@@ -73,20 +73,20 @@ Also, I'm looking for something more specific than just a vague "web standards" 
 * Static content (i.e. images, CSS, JavaScript, and generally content that doesn't need access to cookies) should go in a separate domain that does not use cookies, because all cookies for a domain and its subdomains are sent with every request to the domain and its subdomains. One good option here is to use a Content Delivery Network (CDN), but consider the case where that CDN may fail by including alternative CDNs, or local copies that can be served instead.
 * Minimize the total number of HTTP requests required for a browser to render the page.
 * Utilize Google Closure Compiler for JavaScript and other minification tools.
-* Make sure there’s a favicon.ico file in the root of the site, i.e. /favicon.ico. Browsers will automatically request it, even if the icon isn’t mentioned in the HTML at all. If you don’t have a /favicon.ico, this will result in a lot of 404s, draining your server’s bandwidth.
+* Make sure there’s a `favicon.ico` file in the root of the site, i.e. `/favicon.ico`. Browsers will automatically request it, even if the icon isn’t mentioned in the HTML at all. If you don’t have a `/favicon.ico`, this will result in a lot of 404s, draining your server’s bandwidth.
 
 
 ### SEO (Search Engine Optimization)
 
-* Use "search engine friendly" URLs, i.e. use example.com/pages/45-article-title instead of example.com/index.php?page=45
-* When using # for dynamic content change the # to #! and then on the server $_REQUEST["_escaped_fragment_"] is what googlebot uses instead of #!. In other words, ./#!page=1 becomes ./?_escaped_fragments_=page=1. Also, for users that may be using FF.b4 or Chromium, history.pushState({"foo":"bar"}, "About", "./?page=1"); Is a great command. So even though the address bar has changed the page does not reload. This allows you to use ? instead of #! to keep dynamic content and also tell the server when you email the link that we are after this page, and the AJAX does not need to make another extra request.
+* Use "search engine friendly" URLs, i.e. use `example.com/pages/45-article-title` instead of `example.com/index.php?page=45`
+* When using `#` for dynamic content change the `#` to `#!` and then on the server `$_REQUEST["_escaped_fragment_"]` is what googlebot uses instead of `#!`. In other words, `./#!page=1` becomes `./?_escaped_fragments_=page=1`. Also, for users that may be using FF.b4 or Chromium, `history.pushState({"foo":"bar"}, "About", "./?page=1");` Is a great command. So even though the address bar has changed the page does not reload. This allows you to use `?` instead of `#!` to keep dynamic content and also tell the server when you email the link that we are after this page, and the AJAX does not need to make another extra request.
 * Don't use links that say "click here". You're wasting an SEO opportunity and it makes things harder for people with screen readers.
-* Have an XML sitemap, preferably in the default location /sitemap.xml.
-* Use <link rel="canonical" ... /> when you have multiple URLs that point to the same content, this issue can also be addressed from Google Webmaster Tools.
+* Have an XML sitemap, preferably in the default location `/sitemap.xml`.
+* Use `<link rel="canonical" ... />` when you have multiple URLs that point to the same content, this issue can also be addressed from Google Webmaster Tools.
 * Use Google Webmaster Tools and Bing Webmaster Tools.
 * Install Google Analytics right at the start (or an open source analysis tool like Piwik).
-* Know how robots.txt and search engine spiders work.
-* Redirect requests (using 301 Moved Permanently) asking for www.example.com to example.com (or the other way round) to prevent splitting the google ranking between both sites.
+* Know how `robots.txt` and search engine spiders work.
+* Redirect requests (using 301 Moved Permanently) asking for `www.example.com` to `example.com` (or the other way round) to prevent splitting the google ranking between both sites.
 * Know that there can be badly-behaved spiders out there.
 * If you have non-text content look into Google's sitemap extensions for video etc. There is some good information about this in Tim Farley's answer.
 
