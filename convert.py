@@ -22,9 +22,8 @@ Just a script to convert StackOverflow link format to GH link format
 
 import re
 
-f = open("README.md", "r")
-content = f.read()
-f.close()
+with open("README.md", "r") as f:
+    content = f.read()
 
 split_texts = re.split("\s[\[(0-9)+\]]+:\s", content)
 
@@ -32,6 +31,5 @@ for i, link in enumerate(split_texts):
     link = "(%s)" % link.replace("\n", "").replace(" ", "")
     content = content.replace("[%d]" % i, link, 1)
 
-f = open("README.md", "w")
-f.write(content)
-f.close()
+with open("README.md", "w") as f:
+    f.write(content)
