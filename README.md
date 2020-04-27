@@ -1,4 +1,6 @@
 # Webapp Checklist
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fdhilipsiva%2Fwebapp-checklist.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fdhilipsiva%2Fwebapp-checklist?ref=badge_shield)
+
 
 Technical details that a programmer of a web application should consider before making the site public.
 
@@ -128,3 +130,7 @@ I'm thinking about this from a web developer's perspective, such that someone el
 Think of this from the perspective of a developer who's done some work for intranet-type applications in a fairly trusted environment, and is about to have his first shot and putting out a potentially popular site for the entire big bad world wide web.
 
 Also, I'm looking for something more specific than just a vague "web standards" response. I mean, HTML, JavaScript, and CSS over HTTP are pretty much a given, especially when I've already specified that you're a professional web developer. So going beyond that, Which standards? In what circumstances, and why? Provide a link to the standard's specification.
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fdhilipsiva%2Fwebapp-checklist.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fdhilipsiva%2Fwebapp-checklist?ref=badge_large)
